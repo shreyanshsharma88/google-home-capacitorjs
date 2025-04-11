@@ -1,19 +1,9 @@
 import {
-  Close,
-  KeyboardArrowDownOutlined,
-  KeyboardArrowUpOutlined,
-} from "@mui/icons-material";
-import {
   Box,
-  Collapse,
-  Dialog,
-  IconButton,
   Stack,
-  Typography,
-  useTheme,
+  useTheme
 } from "@mui/material";
 import { FlaskConical } from "lucide-react";
-import { useState } from "react";
 import { IProfile } from "../Hooks";
 
 export const Navbar = ({
