@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 import { UseProfiles } from "../Hooks";
-import { SearchModal, UserProfilesMenu } from "./Modals";
+import { CameraSearchModal, SearchModal, UserProfilesMenu } from "./Modals";
 import { Navbar } from "./Navbar";
 
 export const GoogleContainer = () => {
@@ -94,6 +94,10 @@ export const GoogleContainer = () => {
                 edge="end"
                 aria-label="camera search"
                 sx={{ color: "#9aa0a6" }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleOpen("cameraSearch");
+                }}
               >
                 <Camera />
               </IconButton>
@@ -131,6 +135,10 @@ export const GoogleContainer = () => {
         <SearchModal
           open={params.get("search") == "true"}
           onClose={() => handleClose("search")}
+        />
+        <CameraSearchModal
+          open={params.get("cameraSearch") === "true"}
+          onClose={() => handleClose("cameraSearch")}
         />
       </>
     </Stack>
